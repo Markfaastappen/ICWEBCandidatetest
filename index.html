@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICWEB Candidate-test Phichai Mekkluan</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        padding: 0 auto;
+        margin: 0 auto;
+        background: black;
+    }
+    
+    .navbar {
+        padding-top: 20px;
+        max-width: 83%;
+        margin: 0 auto;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    
+    .navbar a {
+        color: rgb(225, 209, 209);
+        margin-left: 10px
+    }
+    
+    .navbar li a {
+        margin: 0 auto;
+    }
+    
+    .bannerslider {
+        height: 120vh;
+        width: 100%;
+        margin: 0 auto;
+        background-image: url(codebg4.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-bottom: 20px;
+    }
+    
+    .bannercontent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 20rem auto;
+        bottom: auto;
+        transition: margin 0.3s ease-in-out;
+        transition: bottom 0.3s ease-in-out;
+    }
+    
+    .container-l {
+        border: none;
+    }
+    
+    @media (max-width: 2094px) {
+        .bannercontent {
+            margin: 28rem;
+        }
+    }
+    
+    @media (max-width: 1796px) {
+        .bannercontent {
+            margin: 25rem;
+        }
+    }
+    
+    @media (max-width: 1642px) {
+        .bannercontent {
+            margin: 22rem;
+        }
+    }
+    
+    @media (max-width: 1550px) {
+        .bannercontent {
+            margin: 14rem;
+        }
+    }
+    
+    @media (max-width: 1380px) {
+        .bannercontent {
+            margin: 11rem;
+        }
+    }
+    
+    @media (max-width: 1062px) {
+        .bannerslider {
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+    
+    @media (max-width: 1058px) {
+        .bannerslider {
+            background-image: url(codebg4.png);
+            height: 110vh;
+            background-size: cover;
+        }
+    }
+    
+    @media (max-width: 898px) {
+        .bannerslider {
+            background-image: url(codebg4.png);
+            height: 95vh;
+            background-size: cover;
+        }
+        .bannercontent {
+            position: relative;
+            bottom: 8rem;
+        }
+    }
+    
+    @media (max-width: 763px) {
+        #button2 {
+            opacity: 0;
+            display: none;
+        }
+        #button1 {
+            position: relative;
+            left: 90px;
+        }
+    }
+    
+    @media (max-width: 601px) {
+        .bannercontent p {
+            white-space: nowrap;
+        }
+    }
+    
+    .bannercontent h1 {
+        letter-spacing: 1rem;
+        color: white;
+        text-align: center;
+    }
+    
+    .bannercontent p {
+        text-align: center;
+        letter-spacing: normal;
+        text-transform: initial;
+        font-weight: 300;
+        font-size: 2rem;
+        margin: 2rem;
+    }
+    
+    .buttons {
+        margin: 5px auto;
+        display: inline-block;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    button {
+        padding: 10px 35px;
+        text-align: center;
+        color: rgb(16, 11, 11);
+        border-radius: 2px;
+        font-size: 1rem;
+        font-weight: 500;
+        text-align: center;
+        text-transform: uppercase;
+        height: 3rem;
+        width: 12rem;
+        margin: 15px auto;
+        margin-right: 10px;
+        border-color: rgb(225, 228, 230);
+    }
+    
+    #button1 {
+        background-color: transparent;
+        color: white;
+    }
+    
+    #button2 {
+        background-color: rgb(243, 254, 254);
+        color: rgba(0, 0, 0, 0.919);
+    }
+    
+    .animate {
+        position: relative;
+        padding: 30px 0;
+        background-color: rgb(52, 75, 75);
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-color: white;
+        color: white;
+    }
+    
+    .animate h2 {
+        opacity: 1;
+    }
+    /* New styles for the tabs section */
+    
+    .tabs-section {
+        padding: 30px 0;
+        background-color: #f9f9f9;
+    }
+    
+    .tabs-header {
+        text-align: center;
+        margin-bottom: 55px;
+    }
+    
+    .tabs-header h3 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
+    
+    .tabs-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .tabs-links a {
+        color: #333;
+        text-decoration: none;
+        padding: 8px 20px;
+        border-radius: 5px;
+        margin: 0 5px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .tabs-links a:hover {
+        color: #61ff17;
+    }
+    
+    .yellow-dot::before {
+        content: "\00B7";
+        /* Unicode character for bullet (dot) */
+        color: rgb(255, 174, 11);
+        display: inline-flex;
+        justify-content: center;
+        position: relative;
+        text-align: center;
+        padding-top: 20px;
+        top: 6px;
+        left: 141px;
+        /* Set the display to inline */
+        /* Adjust the spacing between the dot and the text */
+    }
+    
+    .tabs-content .row {
+        max-width: 100%;
+        overflow: hidden;
+        padding: 0;
+        margin: 40px;
+    }
+    
+    .tabs-content .row img {
+        width: 55vh;
+        height: 35vh;
+        object-fit: cover;
+        display: block;
+    }
+    /* Footer styles */
+    
+    .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 3rem;
+        text-align: center;
+        margin: 2px atuo;
+        background-color: #f9f9f9;
+    }
+    
+    .footer p {
+        text-align: center;
+        margin: 2 auto;
+    }
+    
+    .footer .container {
+        margin: 0 auto;
+        max-width: 90%;
+    }
+</style>
+
+<body>
+    <!-- Banner Slider -->
+    <div class="sticky-menu-container">
+        <section class="bannerslider">
+            <!-- Navbar -->
+            <nav class="navbar py-5 navbar-expand-lg bg-transparent navbar-dark">
+                <a href="#" class="navbar-brand">Phichai Mekkluan</a>
+                <div class="collapse navbar-collapse">
+                    <ul class=" navbar-nav ms-auto text-uppercase">
+                        <li class="nav-item">
+                            <a href="home" class="nav-link">Home
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="10" fill="white" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="aboutus" class="nav-link">About Us
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="10" fill="white" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="news" class="nav-link">News
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="10" fill="white" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="contact" class="nav-link">Contact Us
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="10" fill="white" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!--! END OF NAVBAR !-->
+            <!-- Show case -->
+
+            <div class="bannercontent">
+                <div class="container-l">
+                    <h1>Development
+                        <p>We are web developer</p>
+                    </h1>
+                    <div class="buttons">
+                        <button id="button1">Read More</button>
+                        <button id="button2">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--! END OF BANNER SLIDER -->
+    </div>
+    <!--! End of Container-l -->
+    <!--- Service Section --->
+    <section class="serviceslider container-fluid bg-white py-1">
+        <div class="container-l mt-5 p-5">
+            <h1 class=" text-center mx-auto p-2 mb-5">Services.</h1>
+            <div class="row">
+                <!--Web Design-->
+                <div class="col-md-4 text-center p-5">
+                    <i class="bi bi-pencil-square text-black display-6"></i>
+                    <h3>Web Design</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam minima asperiores consequatur accusantium corporis vel quia ut. Sint, consequatur obcaecati aut pariatur numquam nam at temporibus dolor culpa nihil. Nobis.</p>
+                </div>
+
+                <!-- Development -->
+                <div class="col-md-4 text-center p-5">
+                    <i class="bi bi-code-slash display-6"></i>
+                    <h3>Development</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, repellendus numquam vero possimus debitis accusamus ea, magnam enim neque a error amet dolor nemo, aliquam suscipit incidunt dolores ipsam commodi.</p>
+                </div>
+
+                <!-- Branding -->
+                <div class="col-md-4 text-center p-5">
+                    <i class="bi bi-tags display-6"></i>
+                    <h3>Branding</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque aliquid quae totam libero! Deleniti explicabo a eum, molestias fugiat dolores blanditiis est tenetur dolore ipsam accusamus minus quos itaque? Quod.</p>
+                </div>
+
+                <!-- Photography -->
+                <div class="col-md-4 m-6 text-center p-5">
+                    <i class="bi bi-camera display-6"></i>
+                    <h3>Photography</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque aliquid quae totam libero! Deleniti explicabo a eum, molestias fugiat dolores blanditiis est tenetur dolore ipsam accusamus minus quos itaque? Quod.</p>
+                </div>
+
+                <!-- Typography -->
+                <div class="col-md-4 text-center p-5">
+                    <i class="bi bi-type display-6"></i>
+                    <h3>Typography</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque aliquid quae totam libero! Deleniti explicabo a eum, molestias fugiat dolores blanditiis est tenetur dolore ipsam accusamus minus quos itaque? Quod.</p>
+                </div>
+                <!-- UI Design -->
+                <div class="col-md-4 text-center p-5">
+                    <i class="bi bi-palette display-6"></i>
+                    <h3>UI Design</h3>
+                    <p class=>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque aliquid quae totam libero! Deleniti explicabo a eum, molestias fugiat dolores blanditiis est tenetur dolore ipsam accusamus minus quos itaque? Quod.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--! End of Service section -->
+    <!-- Animate Section -->
+    <section class="animate" id="animate-section">
+        <div class="container-fluid">
+            <div class="row text-center d-flex justify-content-center align-items-center">
+                <div class="col-md-3 mt-5">
+                    <h2 data-target="59">0</h2>
+                    <p>Awards</p>
+                </div>
+                <div class="col-md-3 mt-5">
+                    <h2 data-target="1054">0</h2>
+                    <p>Client</p>
+                </div>
+                <div class="col-md-3 mt-5">
+                    <h2 data-target="34">0</h2>
+                    <p>Team</p>
+                </div>
+                <div class="col-md-3 mt-5">
+                    <h2 data-target="154">0</h2>
+                    <p>Projects</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--! ENd of animate Section -->
+    <!-- Tabs Section -->
+    <section class="tabs-section">
+        <div class="container">
+            <div class="tabs-header">
+                <h3 class="yellow-dot">Great Work</h3>
+                <div class="tabs-links">
+                    <a href="#">All</a>
+                    <a href="#">Branding</a>
+                    <a href="#">Design</a>
+                    <a href="#">Photo</a>
+                    <a href="#">Coffee</a>
+                </div>
+            </div>
+            <div class="tabs-content">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <img src="./assets/product1.png" alt="Image 1">
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <img src="./assets/product2.png" alt="Image 2">
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <img src="./assets/product3.png" alt="Image 3">
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <img src="assets/product4.png" alt="Image 4">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <img src="./assets/product5.png" alt="Image 5">
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <img src="./assets/product6.png" alt="Image 6">
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <img src="./assets/product7.png" alt="Image 7">
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <img src="./assets/product8.png" alt="Image 8">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container text-center">
+            <p>@2023 &lt;/&gt; Phichai Mekkluan All Rights Reserved</p>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/bootstrap@1.16.0/dist/umd/popper.min.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.19.0/dist/js/bootstrap-icons.min.js "></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js "></script>
+
+    <!--Animate numbers -->
+    <script>
+        // Function to animate the numbers
+        function animateNumbers() {
+            const numberElements = document.querySelectorAll('.animate h2[data-target]');
+            numberElements.forEach((element) => {
+                const targetNumber = parseInt(element.getAttribute('data-target'));
+                const startNumber = 0;
+                const duration = 2000; // Animation duration in milliseconds
+                const interval = 50; // Time between each step of the animation (smaller values make it smoother)
+
+                const totalSteps = duration / interval;
+                const stepValue = (targetNumber - startNumber) / totalSteps;
+
+                let currentNumber = startNumber;
+                const timer = setInterval(() => {
+                    currentNumber += stepValue;
+
+                    if (currentNumber >= targetNumber) {
+                        element.textContent = targetNumber;
+                        clearInterval(timer);
+                    } else {
+                        element.textContent = Math.floor(currentNumber);
+                    }
+                }, interval);
+            });
+        }
+
+        // Intersection Observer API
+        const animateSection = document.querySelector("#animate-section");
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    animateNumbers();
+                    observer.unobserve(entry.target); // Stop observing once the animation is complete
+                }
+            });
+        }, {
+            threshold: 0, // Observe when 20% of the section becomes visible
+            once: true // Only trigger the callback once
+        });
+
+        // Observe the animate section
+        observer.observe(animateSection);
+    </script>
+</body>
+
+</html>
